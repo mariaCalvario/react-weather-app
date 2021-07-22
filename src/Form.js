@@ -21,6 +21,9 @@ export default function Form() {
             className="btn btn-primary mb-3 button"
           />
         </div>
+        <button type="button" class="btn btn-primary">
+          Primary
+        </button>
         <div className="col-auto current-button">
           <input
             type="submit"
