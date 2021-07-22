@@ -1,0 +1,28 @@
+.CurrentTemperature #icon {
+  margin-top: 30px;
+}
+
+.CurrentTemperature .description-temp {
+  font-size: 22px;
+}
+.CurrentTemperature #description {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.CurrentTemperature #description:first-letter {
+  text-transform: uppercase;
+}
+
+.CurrentTemperature .temp-units {
+  font-size: 20px;
+}
+
+.CurrentTemperature .units a {
+  color: white;
+  text-decoration: none;
+}
+
+.CurrentTemperature .active {
+  cursor: default;
+}

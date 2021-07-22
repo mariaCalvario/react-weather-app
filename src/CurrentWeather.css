@@ -1,0 +1,11 @@
+.CurrentWeather ul.current-weather {
+  padding: 0;
+}
+
+.CurrentWeather li#humidity,
+#wind,
+#temp {
+  list-style: none;
+  font-size: 17px;
+  line-height: 1.8;
+}
