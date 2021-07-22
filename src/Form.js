@@ -17,9 +17,8 @@ export default function Form() {
         <div className="col-auto search-button">
           <input type="submit" value="Search" className="button" />
         </div>
-
         <div className="col-auto current-button">
-          <input type="submit" id="geo-button" />
+          <input type="submit" id="geo-button" value="Current" />
         </div>
       </form>
     </div>
