@@ -5,9 +5,9 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="Footer">
-      <p class="footer">
+      <p className="footer">
         <a
-          href="https://github.com/mariaCalvario/weather-app-project"
+          href="https://github.com/mariaCalvario/react-weather-app"
           target="_blank"
           rel="noreferrer"
           id="open-source-link"
