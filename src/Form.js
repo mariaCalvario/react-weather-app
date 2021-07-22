@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 import "./Form.css";
 
@@ -15,10 +16,20 @@ export default function Form() {
           />
         </div>
         <div className="col-auto search-button">
-          <input type="submit" value="Search" className="button" />
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-primary mb-3 button"
+          />
         </div>
         <div className="col-auto current-button">
-          <input type="submit" id="geo-button" value="Current" />
+          <button
+            type="submit"
+            id="geo-button"
+            className="btn btn-primary mb-3"
+          >
+            <FaMapMarkerAlt />
+          </button>
         </div>
       </form>
     </div>

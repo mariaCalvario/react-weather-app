@@ -12,12 +12,6 @@ export default function CurrentTemperature() {
   return (
     <div className="CurrentTemperature">
       <div className="text-center description-temp">
-        <img
-          src={CurrentTemperatureData.img}
-          alt={CurrentTemperatureData.description}
-          id="icon"
-          width="130px"
-        />
         <br />
         <h2 id="description">{CurrentTemperatureData.description}</h2>
         <div className="temp-units">
