@@ -15,20 +15,19 @@ export default function Form() {
           />
         </div>
         <div className="col-auto search-button">
-          <button type="submit" className="btn btn-primary mb-3 button">
-            Search
-          </button>
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-primary mb-3 button"
+          />
         </div>
         <div className="col-auto current-button">
-          <button
+          <input
             type="submit"
             className="btn btn-primary mb-3"
             id="geo-button"
-          >
-            <div className="geo-icon">
-              <FaMapMarkerAlt />
-            </div>
-          </button>
+            value={FaMapMarkerAlt}
+          />
         </div>
       </form>
     </div>
