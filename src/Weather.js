@@ -1,65 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import Form from "./Form";
 
 import "./Weather.css";
 
-export default function Weather() {
-  let CurrentCityData = {
-    city: "Lisbon",
-    country: "PT",
-    date: "Tuesday 15:05",
-  };
-  let CurrentWeatherData = {
-    humidity: 50,
-    wind: 10,
-    tempMin: 20,
-    tempMax: 25,
-  };
-  let CurrentTemperatureData = {
-    description: "Few clouds",
-    temperature: 22,
-  };
-  return (
-    <div className="Weather">
-      <Form />
-      <div className="row">
-        <div className="col-6">
-          <div className="current-location">
-            <h1>
-              <span id="current-city">{CurrentCityData.city}</span>
-              <span id="country">{CurrentCityData.country}</span>
-            </h1>
-            <p id="current-date">{CurrentCityData.date}</p>
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  function displayWeather(response) {
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      country: response.data.sys.country,
+      minTemp: response.data.main.temp_min,
+      maxTemp: response.data.main.temp_max,
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <Form />
+        <div className="row">
+          <div className="col-6">
+            <div className="current-location">
+              <h1>
+                <span id="current-city">{weatherData.city}</span>
+                <span id="country">{weatherData.country}</span>
+              </h1>
+              <p id="current-date">{}</p>
+            </div>
+            <ul className="current-weather">
+              <li id="humidity">Humidity: {weatherData.humidity}%</li>
+              <li id="wind">Wind speed: {Math.round(weatherData.wind)} km/h</li>
+              <li id="temp">
+                Temperature: {Math.round(weatherData.minTemp)}°
+                <span id="temp-min"></span> | {Math.round(weatherData.maxTemp)}°
+                <span id="temp-max"></span>
+              </li>
+            </ul>
           </div>
-          <ul className="current-weather">
-            <li id="humidity">Humidity: {CurrentWeatherData.humidity}%</li>
-            <li id="wind">Wind speed: {CurrentWeatherData.wind} km/h</li>
-            <li id="temp">
-              Temperature: {CurrentWeatherData.tempMin}°
-              <span id="temp-min"></span> | {CurrentWeatherData.tempMax}°
-              <span id="temp-max"></span>
-            </li>
-          </ul>
-        </div>
-        <div className="col-6 text-center description-temp">
-          <br />
-          <h2 id="description">{CurrentTemperatureData.description}</h2>
-          <div className="temp-units">
-            <span id="current-temperature">
-              {CurrentTemperatureData.temperature}
-            </span>
-            <span className="units">
-              <a href="/" id="celsius-link" className="active">
-                °C{" "}
-              </a>
-              |
-              <a href="/" id="farenheit-link" className="inactive">
-                °F
-              </a>
-            </span>
+          <div className="col-6 text-center description-temp">
+            <br />
+            <h2 id="description">{weatherData.description}</h2>
+            <div className="temp-units">
+              <span id="current-temperature">
+                {Math.round(weatherData.temperature)}
+              </span>
+              <span className="units">
+                <a href="/" id="celsius-link" className="active">
+                  °C{" "}
+                </a>
+                |
+                <a href="/" id="farenheit-link" className="inactive">
+                  °F
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "3ca8fabd719ce46d29b590005e8ab76c";
+    let celsius = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=${celsius}&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayWeather);
+
+    return "Loading...";
+  }
 }
