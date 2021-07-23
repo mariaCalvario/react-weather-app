@@ -1,3 +1,11 @@
+body {
+  background-image: url("images/palm-trees.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: block;
+}
+
 .App .container {
   background: transparent;
   font-family: "Montserrat", sans-serif;
@@ -11,10 +19,17 @@
   padding: 30px;
 }
 
-body {
-  background-image: url("images/palm-trees.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: block;
+.App .footer {
+  text-align: center;
+  color: white;
+}
+
+.App #open-source-link {
+  text-decoration: none;
+  color: #064420;
+}
+
+.App #open-source-link:hover {
+  text-decoration: underline;
+  transition: all 200ms ease;
 }

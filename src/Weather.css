@@ -1,0 +1,95 @@
+.Weather .search-bar,
+.search-button,
+.current-button {
+  display: inline-block;
+  margin: 0;
+}
+
+.Weather .search-bar {
+  max-width: 300px;
+  margin-left: 20px;
+}
+
+.Weather #search {
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+}
+
+.Weather .button,
+#geo-button {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #6c8fad;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  opacity: 0.9;
+}
+
+.Weather .button:hover,
+#geo-button:hover {
+  color: white;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 200ms ease;
+  box-shadow: 3px 3px 5px whitesmoke;
+}
+
+.Weather .current-location {
+  margin-top: 30px;
+}
+
+.Weather #current-city {
+  font-size: 43px;
+}
+
+.Weather #country {
+  font-size: 25px;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+
+.Weather #current-date {
+  font-size: 20px;
+}
+
+.Weather ul.current-weather {
+  padding: 0;
+}
+
+.Weather li#humidity,
+#wind,
+#temp {
+  list-style: none;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.Weather #icon {
+  margin-top: 30px;
+}
+
+.Weather .description-temp {
+  font-size: 22px;
+}
+.Weather #description {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.Weather #description:first-letter {
+  text-transform: uppercase;
+}
+
+.Weather .temp-units {
+  font-size: 20px;
+}
+
+.Weather .units a {
+  color: white;
+  text-decoration: none;
+}
+
+.Weather .active {
+  cursor: default;
+}
