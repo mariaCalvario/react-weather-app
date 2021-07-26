@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Form from "./Form";
+import CurrentDate from "./CurrentDate";
 
 import "./Weather.css";
 
@@ -17,6 +18,7 @@ export default function Weather(props) {
       country: response.data.sys.country,
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -31,7 +33,9 @@ export default function Weather(props) {
                 <span id="current-city">{weatherData.city}</span>
                 <span id="country">{weatherData.country}</span>
               </h1>
-              <p id="current-date">{}</p>
+              <p id="current-date">
+                <CurrentDate date={weatherData.date} />
+              </p>
             </div>
             <ul className="current-weather">
               <li id="humidity">Humidity: {weatherData.humidity}%</li>
