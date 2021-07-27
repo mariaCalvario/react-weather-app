@@ -1,8 +1,6 @@
 import React from "react";
 import Icons from "./Icons";
 
-import "./Forecast.css";
-
 export default function Forecast() {
   return (
     <div className="Forecast">

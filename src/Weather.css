@@ -88,3 +88,12 @@
   color: white;
   text-decoration: none;
 }
+
+.Weather .weather-forecast {
+  text-align: center;
+  font-size: 16px;
+}
+
+.Weather .weather-forecast-date {
+  margin-bottom: 3px;
+}
