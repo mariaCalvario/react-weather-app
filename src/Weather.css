@@ -65,9 +65,8 @@
   line-height: 1.8;
 }
 
-.Weather #icon {
+.Weather canvas {
   margin-top: 30px;
-  width: 130px;
 }
 
 .Weather .description-temp {

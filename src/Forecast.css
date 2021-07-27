@@ -1,0 +1,8 @@
+.Forecast .weather-forecast {
+  text-align: center;
+  font-size: 16px;
+}
+
+.Forecast .weather-forecast-date {
+  margin-bottom: 0;
+}
