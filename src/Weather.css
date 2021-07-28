@@ -6,16 +6,15 @@
 }
 
 .Weather .search-bar {
-  max-width: 300px;
-  margin-left: 30px;
+  max-width: 330px;
+  margin-left: 40px;
 }
 
 .Weather #search {
   box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
 }
 
-.Weather .button,
-#geo-button {
+.Weather .button {
   color: white;
   font-size: 18px;
   font-weight: 500;
@@ -26,8 +25,7 @@
   opacity: 0.9;
 }
 
-.Weather .button:hover,
-#geo-button:hover {
+.Weather .button:hover {
   color: white;
   background-color: transparent;
   border: 1px solid transparent;

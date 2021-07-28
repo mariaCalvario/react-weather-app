@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
@@ -65,15 +64,6 @@ export default function Weather(props) {
                 value="Search"
                 className="btn btn-primary mb-3 button"
               />
-            </div>
-            <div className="col-auto current-button">
-              <button
-                type="submit"
-                id="geo-button"
-                className="btn btn-primary mb-3"
-              >
-                <FaMapMarkerAlt />
-              </button>
             </div>
           </form>
         </div>
