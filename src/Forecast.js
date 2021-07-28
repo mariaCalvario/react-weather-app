@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import ForecastDay from "./ForecastDay";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
-  function searchForecast() {
-    const apiKey = "3ca8fabd719ce46d29b590005e8ab76c";
-    let latitude = props.coordinates.lon;
-    let longitude = props.coordinates.lat;
-    let celsius = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${celsius}`;
-    axios.get(apiUrl).then(displayForecast);
-  }
-
   useEffect(() => {
-    return searchForecast();
+    setLoaded(false);
   }, [props.coordinates]);
 
   function displayForecast(response) {
     setForecast(response.data.daily);
     setLoaded(true);
+  }
+
+  function loadForecast() {
+    const apiKey = "3ca8fabd719ce46d29b590005e8ab76c";
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
+    let celsius = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${celsius}`;
+    axios.get(apiUrl).then(displayForecast);
   }
 
   if (loaded) {
@@ -36,12 +35,16 @@ export default function Forecast(props) {
                   <ForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
       </div>
     );
   } else {
+    loadForecast();
+
     return null;
   }
 }
