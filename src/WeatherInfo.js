@@ -21,9 +21,9 @@ export default function WeatherInfo(props) {
             <li id="humidity">Humidity: {props.info.humidity}%</li>
             <li id="wind">Wind speed: {Math.round(props.info.wind)} km/h</li>
             <li id="temp">
-              Temperature: {Math.round(props.info.minTemp)}°
-              <span id="temp-min"></span> | {Math.round(props.info.maxTemp)}°
-              <span id="temp-max"></span>
+              Temperature: {Math.round(props.info.maxTemp)}°
+              <span id="temp-max"></span> | {Math.round(props.info.minTemp)}°
+              <span id="temp-min"></span>
             </li>
           </ul>
         </div>
