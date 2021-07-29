@@ -1,6 +1,5 @@
 .Weather .search-bar,
-.search-button,
-.current-button {
+.search-button {
   display: inline-block;
   margin: 0;
 }
